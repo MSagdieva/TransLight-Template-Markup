@@ -1,0 +1,32 @@
+-var pageTitle = 'Главная'
+
+doctype html
+html(lang="ru")
+  head
+    title=pageTitle
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
+    link(rel="stylesheet", href="css/style.min.css")
+  body
+    include elements/header.pug
+    main.page
+        section.page__main-heading.main-heading
+          .main-heading__container
+            .main-heading__content._container
+              .main-heading__block
+                h1.main-heading__title.title Светотехническое оборудование 
+                  br 
+                  | в Петербурге
+                p.main-heading__text.text 
+                  |Продажа, аренда светотехнического оборудования.
+                  br 
+                  |Оформление официальных мероприятий под ключ.
+                a.main-heading_btn.btn Перейти
+          
+        include elements/projects.pug
+        include elements/catalog.pug
+        include elements/rent.pug
+        include elements/news.pug
+    include elements/footer.pug
+    script(type='text/javascript' src='js/script.min.js')
+          
+          

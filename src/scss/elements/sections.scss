@@ -1,0 +1,293 @@
+.section{
+    opacity: 0;
+    overflow: hidden;
+    transition: translateX(120%);
+    transition: all 0.3s ease-in;
+}
+
+.section._active {
+    opacity: 1;
+    transform: translateY(0);
+    
+}
+
+//-----------------
+.section {
+
+    &__projects, &__rent,&__catalog, &__news {
+        @include adaptive-value('margin-top', 140, 60, 0);
+    }
+}
+
+.rent {
+
+    &__heading {
+        position:relative;
+        @include adaptive-value('padding-bottom', 75, 30, 0);
+        @media (max-width:$md4+px) {
+            text-align: center;
+            
+        }
+}
+}
+.catalog {
+
+    &__heading {
+        position:relative;
+        @include adaptive-value('padding-bottom', 75, 30, 0);
+        @media (max-width:$md4+px) {
+            text-align: center;
+            
+        }
+}
+}
+
+.news {
+
+    &__heading {
+        position:relative;
+        @include adaptive-value('padding-bottom', 75, 30, 0);
+        @media (max-width:$md4+px) {
+            text-align: center;
+            
+        }
+}
+}
+
+.heading {
+    &__slider-navigation {
+        position: absolute;
+        display:inline-block;
+        right:0;
+        top: 0;
+        @media (max-width:$md3+px) {
+            right:10px;
+            top: 10px;
+
+        }
+        @media (max-width:$md4+px) {
+            display: none;
+        }
+        span{
+            box-sizing: border-box;
+            display:inline-block;
+            width: 55px;
+            text-align: center;
+            height:55px;
+            font-family: $SecondFontFamily;
+            font-weight: 600;
+            font-size: 30px;
+            color: rgba(0, 91, 193, 1);
+            border: solid 2px rgba(0, 91, 193, 1);
+            position: relative;
+            cursor: pointer;
+            transition:  all 0.3s ease;
+            &:hover{
+                border: solid 2px rgba(0, 91, 193, 1);
+                transform: scale(0.8);
+            }
+            @media (max-width:$md3+px) {
+                width: 30px;
+                height:30px;
+
+            }
+        }
+        .left:hover+.right{
+            border: solid 2px rgba(0, 91, 193, 1);
+        }
+        .right{
+            border-left: none;
+            &:hover{
+                border: solid 2px rgba(0, 91, 193, 1);
+            }
+        }
+        .left:before, .left:after,
+        .right:before, .right:after
+        {
+            content: "";
+            position: absolute;
+            width: 36%;
+            height: 2px;
+            background-color: rgba(0, 91, 193, 1);
+            left: 36%;
+
+        }
+        .right:before{
+            top:18px;
+            transform: rotate(45deg);
+        }
+        .left:before,.right:after{
+        bottom: 18px;
+        transform: rotate(-45deg);
+            }
+        .left:before{
+            transform: rotate(-45deg);
+            top:18px;
+        }
+        .left:after{
+            transform: rotate(45deg);
+            bottom: 19px;
+        }
+        @media (max-width:$md3+px) {
+            .right:before{
+                top:9px;
+            }
+            .right:after{
+            bottom: 9px;
+                }
+            .left:before{
+                top:9px;
+            }
+            .left:after{
+                bottom: 10px;
+            }
+
+        }
+}  
+    &__decor{
+        position: relative;
+        @media (max-width:$md4+px){
+            display: none;
+            }
+        width: 100px;
+        height: 30px;
+        display: inline-block;
+        &:before, &:after{
+            content: "";
+            position: absolute;
+            height: 3px;
+            background-color: rgba(0, 91, 193, 1);
+            
+        }
+        &:before{
+            width: 100px;
+            top: 10px;
+            right:0;
+            @media (max-width:$md3+px){
+                width: 75px;
+                }
+        }
+        &:after{
+            width: 50px;
+            top: 20px;
+            right:0;
+            @media (max-width:$md3+px){
+                width: 40px;
+            }
+        }
+    }
+    &__title {
+        display: inline-block;
+        line-height: 1.8;
+        margin: 0;
+        margin-left: 45px;
+}
+}
+.slider {
+    &__link {
+
+        display: none;
+        @media (max-width:$md4+px) {
+            display: block;
+        }
+        margin-right: 30px;
+        padding:20px;
+        height: 400px;
+        color:white;
+        background: url('../img/project1logo.png');
+        background-size: cover;
+        @media (max-width:$md1+px) {
+            margin-right: 0;
+            margin-top: 30px;
+        }
+        @media (max-width:$md2+px) {
+            width:80%;
+        }
+        }
+
+
+    }
+
+.slider__link:nth-child(2){
+        background: url('../img/project2logo.png');
+        background-size: cover;
+}
+.slider__link:nth-child(3){
+    background: url('../img/project3logo.jpg');
+    background-size: 100%;
+    background-clip: border-box;
+    background-repeat: no-repeat;
+    background-position: 0 60%;
+}
+.slider__link:nth-child(4){
+    background: url('../img/project4logo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+}
+
+.slider__link:nth-child(5){
+    background: url('../img/project5logo.jpg');
+    background-size: 100%;
+    background-clip: border-box;
+    background-repeat: no-repeat;
+    background-position: 0 60%;
+}
+
+.slider__link:nth-child(6){
+    background: url('../img/noImageAvailable.svg');
+    background-size: 60%;
+    background-clip: border-box;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+.slider__link:nth-child(2n){
+        margin-right: 0;}
+        
+
+.slide {
+    width: 500px;
+    position: relative;
+    @media (max-width:$md4+px) {
+        min-width: 400px;
+        height: 200px;
+    }
+    &__body {
+        background-color: #fff;
+        width: 50%;
+        padding: 20px;
+        position:absolute;
+        right: 40px;
+        bottom:40px;
+        @media (max-width:$md4+px) {
+            min-width: 100px;
+        }
+    }
+    
+
+    &__link {
+        text-decoration: none;
+        color: #000;
+        display: block;
+        // min-width: 540px;
+    }
+
+    &__title {
+        font-size: 18px;
+    }
+
+    &__text {
+        font-size: 16px;
+    }
+}
+
+.slider__link.active{
+        display: block;
+        color: black;
+    }
+
+@import 'projects';
+@import 'catalog';
+@import 'rent';
+@import 'news';

@@ -1,0 +1,25 @@
+.projects {
+
+    &__heading {
+        position:relative;
+        @include adaptive-value('padding-bottom', 75, 30, 0);
+        @media (max-width:$md4+px) {
+            text-align: center;
+            
+        }
+}
+
+    &__slider-content {
+    }
+
+    &__slider {
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden;
+        justify-content: stretch;
+        @media (max-width:$md1+px) {
+            justify-content: center;
+        }
+    }
+
+}

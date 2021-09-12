@@ -1,0 +1,165 @@
+.page {
+
+    &__news {
+    }
+}
+.section {
+
+    &__news {
+        margin-bottom: calc(60px + 80 * ((100vw - 320px)/ 1600));
+    }
+}
+
+.news {
+
+    &__heading {
+        display:flex;
+        justify-content: space-between;
+        @media (max-width:$md4+px){
+        margin-bottom: 40px;
+        flex-direction: column;
+        
+    }
+    }
+
+    &__title {
+    }
+
+    &__button {
+        background-color: rgba(0, 91, 193, 1);
+        padding: 15px 34px;
+        @include adaptive-value('font-size', 18, 12, 0);
+    }
+
+    &__preview {
+    }
+}
+.heading {
+
+    &__decor {
+    }
+}
+.prewiew {
+
+    &__main-anonce {
+        display:grid;
+        grid-template-columns: 255px auto;
+        grid-gap: 30px;
+        width: 48%;
+        min-width: 400px;
+        margin-right: 60px;
+        @media (max-width:$md4+px){
+            min-width:0;
+        }
+        .anonce__illustration{
+            width:255px;
+            @media (max-width:$md2+px){
+                width:128px;
+            }
+            @media (max-width:$md4+px){
+                width:76px;
+            }
+        }
+        .anonce-title{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__secondary-anonce {
+        width: 20%;
+        margin-right: 60px;
+        .image-column{
+            display: flex;
+            justify-content: space-between;
+        }
+        .anonce__date{
+            align-self: flex-end;
+        }
+        @media (max-width:$md2+px) {
+        .anonce__date{
+            position:relative;
+            left:300px;
+        }
+        }
+        @media (max-width:$md3+px) {
+            .anonce__date{
+                position:static;
+            }
+    }
+    }
+    &__secondary-anonce:last-child{
+        margin-right: 0;
+        
+    }
+}
+.preview {
+
+    &__container {
+        display:flex;
+        @media (max-width:$md2+px) {
+            flex-direction: column;
+
+        }
+    }
+}
+.anonce {
+@media (max-width:$md2+px) {
+        display:grid;
+        grid-template-columns: 1fr 3fr;
+        grid-row-start: 1;   
+        grid-row-end: 2;
+        grid-gap: 30px;
+        width: 100%;
+        margin: 10px 0;
+        }
+        @media (max-width:262px) {
+        grid-template-columns: 1fr;
+    }
+    &__title {
+        display: inline-block;
+        margin: 0;
+        @include adaptive-value('font-size', 18, 14, 0);
+        height: 70px;
+        @media (max-width:$md2+px){
+            height: 0;
+        }
+    }
+
+    &__date {
+        display:inline-block;
+        font-family: $SecondFontFamily;
+        font-weight:600;
+        color: rgba(151, 151, 151, 1);
+        @include adaptive-value('font-size', 14, 10, 0);
+    }
+
+    &__illustration {
+        width:128px;
+        @media (max-width:$md4+px){
+            width:76px;
+        }
+    }
+
+    &__text {
+        @include adaptive-value('font-size', 14, 10, 0);
+    }
+
+    &__link {
+        color:rgba(52, 52, 52, 1);
+        font-family: $SecondFontFamily;
+        font-weight: 400;
+        @include adaptive-value('font-size', 14, 10, 0);
+        text-decoration: underline;
+    }
+
+    @media (max-width:$md2+px) {
+        .image-column{
+            display:block;
+            order: 1;
+        }
+        .anonce-column{
+            order: 2;
+        }
+        }
+}
